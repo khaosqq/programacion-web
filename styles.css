@@ -1,0 +1,492 @@
+/**
+ * Global Styles
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
+}
+
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+section {
+    background: #ffffff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+section:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+section h2 {
+    color: #1a1a2e;
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e94560;
+    letter-spacing: 1px;
+}
+
+
+fieldset {
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0 10px;
+    color: var(--text-color);
+}
+
+/**
+ * Color Variables
+ */
+:root {
+    --primary-color: #1a1a2e;
+    --secondary-color: #e94560;
+    --background-color: #dcdada;
+    --text-color: #2c3e50;
+}
+/**
+    * Header Styles
+    */
+.header-container {
+    background-color: var(--primary-color);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--secondary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin-bottom: 40px;
+}
+
+.header-container h1 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.header-container h1::before {
+    color: var(--secondary-color);
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.8rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.nav ul li a:hover {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+
+/**
+ * Formulario.html styles
+ */
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group label {
+    width: 200px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 200px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color);
+}
+
+.form-group textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.inline-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    flex: 1;
+}
+
+.inline-group label {
+    width: auto;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+ .inline-group input[type="checkbox"],
+.inline-group input[type="radio"] {
+    width: auto;
+    margin: 0;
+    flex: none;
+}
+
+.range-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.range-container input[type="range"] {
+    flex: 1;
+    min-width: 150px;
+}
+
+.range-value {
+    font-weight: bold;
+    color: #4CAF50;
+    min-width: 40px;
+}
+
+ .button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-group button {
+    padding: 12px 40px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-group button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.button-group button[type="submit"]:hover {
+    transform: scale(1.02);
+}
+
+.button-group button[type="reset"] {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.button-group button[type="reset"]:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.02);
+}
+
+.required::after {
+    content: "*";
+    color: #f44336;
+    margin-left: 5px;
+}
+
+
+/**
+ * Informe Section Styles
+ */
+.informe-container {
+    background: #ffffff;
+}
+
+.informe-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.informe-content article h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.informe-content article p {
+    margin-bottom: 1rem;
+}
+
+.informe-content article strong {
+    color: var(--secondary-color);
+}
+
+figure {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    font-style: italic;
+}
+
+/**
+ * Recomendaciones Section Styles
+ */
+#recomendaciones ol {
+    padding-left: 1.5rem;
+    list-style-position: outside;
+}
+
+#recomendaciones ol li {
+    margin-bottom: 0.8rem;
+    padding-left: 0.5rem;
+}
+
+#recomendaciones ol li::marker {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/**
+ * Atencion Section Styles
+ */
+
+#atencion dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.8rem 2rem;
+    margin: 1rem 0;
+}
+
+#atencion dt {
+    font-weight: 600;
+    color: var(--primary-color);
+    white-space: nowrap;
+}
+
+#atencion dt::before {
+    content: "📞 ";
+}
+
+#atencion dd {
+    margin: 0;
+    color: var(--text-color);
+}
+
+/**
+ * Replicas Section Styles
+ */
+#replicas table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem 0;
+    font-size: 0.95rem;
+}
+
+#replicas caption {
+    caption-side: bottom;
+    margin-top: 0.8rem;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    font-style: italic;
+}
+
+#replicas th,
+#replicas td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+
+#replicas th {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+#replicas tbody tr:hover {
+    background-color: #f1f3f5;
+}
+
+#replicas tfoot td {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    background-color: #f8f9fa;
+    font-style: italic;
+    border-bottom: none;
+}
+/**
+ * Aside Styles
+ */
+
+aside {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    border-left: 4px solid var(--secondary-color);
+    margin-top: 1rem;
+}
+
+
+aside h2 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+aside p {
+    color: var(--text-color);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+}
+/**
+ * Responsive Styles
+ */
+@media (max-width: 768px) {
+    body {
+        padding-top: 120px; 
+    }
+
+    main {
+        padding: 0 1rem;
+    }
+
+    section,
+    aside {
+        padding: 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.3rem;
+    }
+
+    /* Ajuste de la lista de definición */
+    #atencion dl {
+        grid-template-columns: 1fr;
+        gap: 0.3rem 0;
+    }
+
+    #atencion dt {
+        margin-top: 0.8rem;
+        white-space: normal;
+    }
+
+    #atencion dd {
+        padding-left: 1.5rem;
+    }
+
+    /* Tabla responsive */
+    #replicas table {
+        font-size: 0.85rem;
+    }
+
+    #replicas th,
+    #replicas td {
+        padding: 0.5rem 0.8rem;
+    }
+
+    /* Video */
+    section video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 0 0.5rem;
+    }
+
+    section,
+    aside {
+        padding: 1rem;
+        border-radius: 4px;
+    }
+
+    #replicas table {
+        font-size: 0.75rem;
+    }
+
+    #replicas th,
+    #replicas td {
+        padding: 0.3rem 0.5rem;
+    }
+
+    .informe-content article p {
+        font-size: 0.95rem;
+    }
+}

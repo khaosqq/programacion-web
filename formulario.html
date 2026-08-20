@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de donación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header-container">
+        <h1>Alerta-Sismos</h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html#informe">Informe del evento</a></li>
+                <li><a href="index.html#recomendaciones">Recomendaciones</a></li>
+                <li><a href="index.html#atencion">Líneas de atención</a></li>
+                <li><a href="index.html#replicas">Tabla de réplicas</a></li>
+                <li><a href="formulario.html">Donación</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+    <main>
+        <section>
+            <form  method="POST" class="form-container">
+                <fieldset>
+                    <legend>Informacion del Donante</legend>
+                    
+                    <div class="form-group">
+                        <label for="nombreCompleto" class="required">Nombre completo o razón social:</label>
+                        <input type="text" id="nombreCompleto" name="nombreCompleto" required minlength="3" maxlength="60" placeholder="Ej: Juan Pérez o Empresa XYZ">
+                    </div>
+                    <div class="form-group">
+                        <label for="documento">Documento de identidad:</label>
+                        <input type="text" id="documento" name="documento" required pattern="[0-9]{8,12}" title="Ingrese un número de documento válido (8 a 12 dígitos)">
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" required placeholder="su.correo@ejemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" required pattern="3[0-9]{7,15}" title="Debe tener 10 dígitos y comenzar con 3 (ej: 3123456789)">
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoDonante">Tipo de donante:</label>
+                        <select id="tipoDonante" name="tipoDonante" required>
+                            <option value="persona" selected>Persona natural</option>
+                            <option value="organizacion">Organización</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Detalle de la donacion</legend>
+                    <div class="form-group">
+                        <label for="tipoInsumo">Tipo de insumo:</label>
+                        <select id="tipoInsumo" name="tipoInsumo" required>
+                            <optgroup label="Alimentos">
+                                <option value="granos">Granos</option>
+                                <option value="enlatados">Enlatados</option>
+                                <option value="no_perecibles">No perecibles</option>
+                                <option value="perecibles">Perecibles</option>
+                            </optgroup>
+                            <optgroup label="Aseo">
+                                <option value="jabon">Jabón</option>
+                                <option value="cloro">Cloro</option>
+                                <option value="desinfectante">Desinfectante</option>
+                                <option value="papel">Papel higiénico</option>
+                            </optgroup>
+                            <optgroup label="Abrigo">
+                                <option value="ropas">Ropas</option>
+                                <option value="calzado">Calzado</option>
+                                <option value="cobijas">Cobijas</option>
+                            </optgroup>
+                            <optgroup label="Otros">
+                                <option value="medicamentos">Medicamentos</option>
+                                <option value="herramientas">Herramientas</option>
+                                <option value="otros">Otros</option>
+                            </optgroup>>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="puntoAcoplo">Punto de acoplo:</label>
+                        <input type="text" id="puntoAcoplo" list="puntosAcoplo" name="puntoAcoplo" required minlength="3" maxlength="100">
+                        <datalist id="puntosAcoplo">
+                            <option value="Centro de acopio principal"></option>
+                            <option value="Punto de acopio secundario 1"></option>
+                            <option value="Punto de acopio secundario 2"></option>
+                        </datalist>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="direccionRecoleccion">Dirección de recolección:</label>
+                        <input type="text" id="direccionRecoleccion" name="direccionRecoleccion" required minlength="5" maxlength="120" placeholder="Calle 123 #45-67, Barrio, Ciudad">
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaEntrega" class="required">Fecha de entrega:</label>
+                        <input type="date" id="fechaEntrega" name="fechaEntrega" required minvalue="2026-08-16" maxvalue="2026-09-16">
+                    </div>
+                    <div class="form-group">
+                        <label for="peso">Peso aproximado (kg):</label>
+                        <div class="range-container">
+                        <input type="range" id="peso" name="peso" min="1" max="100" step="5">
+                        <span class="range-value" id="pesoValue">1 kg</span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Servicios y logistica</legend>
+                    <div class="form-group">
+                        <label for="transporte">Servicios que requiere:</label>
+                        <div class="inline-group">
+                            <label for="servTransporte">
+                                <input type="checkbox" id="servTransporte" name="servicios" value="transporte">
+                                Transporte
+                            </label>
+                            <label for="servEmbalaje">
+                                <input type="checkbox" id="servEmbalaje" name="servicios" value="embalaje">
+                                Embalaje
+                            </label>
+                            <label for="servCertificado">
+                                <input type="checkbox" id="servCertificado" name="servicios" value="certificado">
+                                Certificado de donación
+                            </label>
+                            <label for="servPersonal">
+                                <input type="checkbox" id="servPersonal" name="servicios" value="personal">
+                                Personal de descargue
+                            </label>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="form-group">
+                        <label for="formasEntrega">Formas de entrega:</label>
+                        <div class="inline-group">
+                            <label for="entregaLlevada">
+                                <input type="radio" id="entregaLlevada" name="formasEntrega" value="llevada" required>
+                                La llevan
+                            </label>
+                            <label for="entregaRecogida">
+                                <input type="radio" id="entregaRecogida" name="formasEntrega" value="recogida" required>
+                                La recogen
+                            </label>
+                            <label for="envianTransportadora">
+                                <input type="radio" id="envianTransportadora" name="formasEntrega" value="transportadora" required>
+                                La envían por transportadora
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad de unidades o bultos:</label>
+                        <input type="number" id="cantidad" name="cantidad" min="0" step="1" value="1">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="detalles">Detalles del envio</label>
+                        <textarea id="detalles" name="detalles" maxlength="400" placeholder="Ingrese detalles adicionales sobre la entrega, si es necesario."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="soporte">Soporte (foto del lote o factura):</label>
+                        <input type="file" id="soporte" name="soporte" accept=".jpg,.jpeg,.png,.gif,.pdf">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Autorización de tratamiento de datos</legend>
+                    <div class="form-group">
+                        <label for="autorizacion" class="required">Autorización de tratamiento de datos (Ley 1581 de 2012):</label>
+                        <div class="inline-group">
+                            <label for="autorizacion">
+                                <input type="checkbox" id="autorizacion" name="autorizacion" value="aceptado" required>
+                                Acepto que mis datos personales sean tratados según la Ley 1581 de 2012
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="button-group">
+                    <button type="submit">Enviar Donación</button>
+                    <button type="reset">Limpiar Formulario</button>
+                </div>
+            </form> 
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 Centro de Monitoreo Sísmico - Todos los derechos reservados.</p>
+        <p>Última actualización: <time datetime="2026-08-16T17:00:00">16 de agosto de 2026, 17:00 horas</time></p>
+    </footer>
+</body>
+</html>
